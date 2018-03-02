@@ -9,6 +9,7 @@
  **/
  ?>
  <?php get_header(); ?>
+ <div id = "wrapper" class = "clearfix">
  <main>
  <b>index template</b><br>
  <b>Start WordPress Loop</b><br>
@@ -24,4 +25,10 @@
 <?php endif; ?>
 <b>End WordPress Loop</b>
  </main>
+	<div id = "sidebar">
+		<div id = "sidebar-primary" class="sidebar">
+		<?php get_sidebar(); ?>
+		</div>
+	</div>
+  </div><!-- wrapper -->
 <?php get_footer(); ?>

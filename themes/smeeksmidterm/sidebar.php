@@ -15,6 +15,7 @@
  // }
 // ?>
 
-<aside id="primary" class="widget-area" role="complementary" aria-label="<?php esc_attr_e( 'Blog Sidebar', 'smeeksmidterm' ); ?>">
-	<?php dynamic_sidebar( 'sidebar' ); ?>
-</aside><!-- #primary -->
+<div id="sidebar-primary" class="sidebar"> 
+	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+	
+</div>
