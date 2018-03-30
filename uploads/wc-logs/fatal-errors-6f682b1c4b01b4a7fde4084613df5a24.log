@@ -1,0 +1,28 @@
+2018-03-29T17:55:15+00:00 CRITICAL Uncaught Error: Class 'Wppb_Test_Activator' not found in /var/www/html/wordpress/wp-content/plugins/smeeksplugin/smeeksplugin.php:46
+Stack trace:
+#0 /var/www/html/wordpress/wp-includes/class-wp-hook.php(286): activate_smeeksplugin(false)
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#2 /var/www/html/wordpress/wp-includes/plugin.php(453): WP_Hook->do_action(Array)
+#3 /var/www/html/wordpress/wp-admin/includes/plugin.php(586): do_action('activate_smeeks...', false)
+#4 /var/www/html/wordpress/wp-admin/plugins.php(43): activate_plugin('smeeksplugin/sm...', 'http://smeeks12...', false)
+#5 {main}
+  thrown
+
+2018-03-29T17:55:15+00:00 CRITICAL Uncaught Error: Class 'Wppb_Test_Activator' not found in /var/www/html/wordpress/wp-content/plugins/smeeksplugin/smeeksplugin.php:46
+Stack trace:
+#0 /var/www/html/wordpress/wp-includes/class-wp-hook.php(286): activate_smeeksplugin('')
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#2 /var/www/html/wordpress/wp-includes/plugin.php(453): WP_Hook->do_action(Array)
+#3 /var/www/html/wordpress/wp-admin/plugins.php(174): do_action('activate_smeeks...')
+#4 {main}
+  thrown
+
+2018-03-29T17:55:15+00:00 CRITICAL Uncaught Error: Class 'Wppb_Test_Activator' not found in /var/www/html/wordpress/wp-content/plugins/smeeksplugin/smeeksplugin.php:46
+Stack trace:
+#0 /var/www/html/wordpress/wp-includes/class-wp-hook.php(286): activate_smeeksplugin('')
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#2 /var/www/html/wordpress/wp-includes/plugin.php(453): WP_Hook->do_action(Array)
+#3 /var/www/html/wordpress/wp-admin/plugins.php(174): do_action('activate_smeeks...')
+#4 {main}
+  thrown
+
