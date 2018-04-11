@@ -22,7 +22,7 @@
  * @link       smeeks12763.sb.cis
  * @since      1.0.0
  *
- * @package    Staff_Directory
+ * @package    Smeeks_Staff_Directory
  */
 
 // If uninstall not called from WordPress, then exit.

@@ -19,6 +19,7 @@
 	$custom = get_post_custom($post->ID);
 	$smeeks_staff_directory_first_name = $custom["smeeks_staff_directory_first_name"][0];
 	$smeeks_staff_directory_last_name = $custom["smeeks_staff_directory_last_name"][0];
+	$smeeks_staff_directory_sort_order = $custom["smeeks_staff_directory_sort_order"][0];
 		
 ?>
 <fieldset class = "outer">
@@ -27,4 +28,6 @@
 	<input class="smeeks-staff-directory-input"  name="smeeks_staff_directory_first_name" type="text" value="<?php echo $smeeks_staff_directory_first_name; ?>"  required /><br>
 	<label class="smeeks-staff-directory-label">Last Name:</label>
 	<input class="smeeks-staff-directory-input"  name="smeeks_staff_directory_last_name" type="text" value="<?php echo $smeeks_staff_directory_last_name; ?>"  required /><br>
+	<label class="smeeks-staff-directory-label">Sort Order:</label>
+	<input class="smeeks_staff-directory-input"  name="smeeks_staff_directory_sort_order" type="text" value="<?php echo $smeeks_staff_directory_sort_order; ?>"  required /><br>
 </fieldset>

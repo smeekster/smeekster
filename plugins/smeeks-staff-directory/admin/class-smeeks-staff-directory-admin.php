@@ -100,14 +100,15 @@ class Smeeks_Staff_Directory_Admin {
 
 	}
 	public function register_smeeks_staff_directory_post_type() {
-		register_post_type( 'smeeks-staff_directory',
+		register_post_type( 'smeeks_staff_directory',
 			array(
 				'labels' => array(
-				'name' => __( 'Staff Directory' ),
-				'singular_name' => __( 'Staff Directory' )
+				'name' => __( 'Smeeks Staff Directory' ),
+				'singular_name' => __( 'Smeeks Staff Directory' )
 				),
 			'public' => true,
 			'has_archive' => true,
+			'support' =>array('title', 'editor', 'thumbnail')
 			)
 		);	
 	}
@@ -128,9 +129,18 @@ class Smeeks_Staff_Directory_Admin {
 		update_post_meta($post->ID, "smeeks_staff_directory_first_name", $smeeks_staff_directory_first_name);
 		$smeeks_staff_directory_last_name = sanitize_text_field( $_POST['smeeks_staff_directory_last_name'] );
 		update_post_meta($post->ID, "smeeks_staff_directory_last_name", $smeeks_staff_directory_last_name);
-
+		$smeeks_staff_directory_sort_order = sanitize_text_field( $_POST['smeeks_staff_directory_sort_order'] );
+		update_post_meta($post->ID, "smeeks_staff_directory_sort_order", $smeeks_staff_directory_sort_order);
 	}	
-	
+	function smeeks_staff_directory_sort_menu(){
+		//add_submenu_page( string $parent_slug, string $page_title, string $menu_title, string $capability, string $menu_slug, callable $function = '' )
+		add_submenu_page( 'edit.php?post_type=smeeks_staff_directory', 'Sort', 'Sort', 'manage_options', 'smeeks_staff_directory_sort', array($this,'render_smeeks_staff_directory_sort') ); 
+	}
+
+	public function render_smeeks_staff_directory_sort() {
+		//die('render_staff_directory_sort');
+		require_once plugin_dir_path( __FILE__ ) . 'partials/smeeks-staff-directory-admin-sort.php';
+	}
 	
 	
 
