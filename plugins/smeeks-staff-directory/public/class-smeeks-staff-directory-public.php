@@ -73,7 +73,7 @@ class Smeeks_Staff_Directory_Public {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/smeeks_staff-directory-public.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/smeeks-staff-directory-public.css', array(), $this->version, 'all' );
 
 	}
 
@@ -96,7 +96,7 @@ class Smeeks_Staff_Directory_Public {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/smeeks_staff-directory-public.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/smeeks-staff-directory-public.js', array( 'jquery' ), $this->version, false );
 
 	}
 	function smeeks_staff_directory_template_chooser( $template ) {
@@ -114,7 +114,10 @@ class Smeeks_Staff_Directory_Public {
 		// Else use custom template
 		if ( is_single() ) {
 			return $this->smeeks_staff_directory_get_template_hierarchy( 'single' );
-		}	 
+		}	
+		if ( is_archive() ) {
+			return $this->smeeks_staff_directory_get_template_hierarchy( 'archive' );
+		}
 	}
 	function smeeks_staff_directory_get_template_hierarchy( $template ) {
 	 

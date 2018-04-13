@@ -6,8 +6,8 @@
  * @link       smeeks12763.sb.cis
  * @since      1.0.0
  *
- * @package    smeeks_Staff_Directory
- * @subpackage smeeks_Staff_Directory/admin
+ * @package    Smeeks_Staff_Directory
+ * @subpackage Smeeks_Staff_Directory/admin
  */
 
 /**
@@ -16,8 +16,8 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the admin-specific stylesheet and JavaScript.
  *
- * @package    smeeks_Staff_Directory
- * @subpackage smeeks_Staff_Directory/admin
+ * @package    Smeeks_Staff_Directory
+ * @subpackage Smeeks_Staff_Directory/admin
  * @author     Stephanie Meeks <smeeks1@cnm.edu>
  */
 class Smeeks_Staff_Directory_Admin {
@@ -100,11 +100,11 @@ class Smeeks_Staff_Directory_Admin {
 
 	}
 	public function register_smeeks_staff_directory_post_type() {
-		register_post_type( 'smeeks_staff_directory',
+		register_post_type( 'staff_directory',
 			array(
 				'labels' => array(
-				'name' => __( 'Smeeks Staff Directory' ),
-				'singular_name' => __( 'Smeeks Staff Directory' )
+				'name' => __( 'Staff Directory' ),
+				'singular_name' => __( 'Staff Directory' )
 				),
 			'public' => true,
 			'has_archive' => true,
@@ -115,7 +115,7 @@ class Smeeks_Staff_Directory_Admin {
 	public function display_smeeks_staff_directory_meta_fields() {
 		//https://developer.wordpress.org/reference/functions/add_meta_box/
 		//add_meta_box(id,title,callback,screen,context,priority,callback_args)
-		add_meta_box("smeeks_staff_directory_meta", "Staff Directory Details", array($this,"render_smeeks_staff_directory_meta_options"), "smeeks_staff_directory", "normal", "default");
+		add_meta_box("smeeks_staff_directory_meta", "Smeeks Staff Directory Details", array($this,"render_smeeks_staff_directory_meta_options"), "smeeks_staff_directory", "normal", "default");
 	}
 	public function render_smeeks_staff_directory_meta_options() {
 		require_once plugin_dir_path( __FILE__ ) . 'partials/smeeks-staff-directory-admin-display.php';

@@ -10,7 +10,7 @@
  *
  * @link              smeeks12763.sb.cis
  * @since             1.0.0
- * @package           smeeks_Staff_Directory
+ * @package           Smeeks_Staff_Directory
  *
  * @wordpress-plugin
  * Plugin Name:       Smeeks Staff Directory
@@ -41,7 +41,7 @@ define( 'PLUGIN_NAME_VERSION', '1.0.0' );
  * The code that runs during plugin activation.
  * This action is documented in includes/class-smeeks-staff-directory-activator.php
  */
-function activate_Smeeks_Staff_Directory() {
+function activate_smeeks_staff_directory() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-smeeks-staff-directory-activator.php';
 	Smeeks_Staff_Directory_Activator::activate();
 }
@@ -50,13 +50,13 @@ function activate_Smeeks_Staff_Directory() {
  * The code that runs during plugin deactivation.
  * This action is documented in includes/class-smeeks-staff-directory-deactivator.php
  */
-function deactivate_Smeeks_Staff_Directory() {
+function deactivate_smeeks_staff_directory() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-smeeks-staff-directory-deactivator.php';
 	Smeeks_Staff_Directory_Deactivator::deactivate();
 }
 
-register_activation_hook( __FILE__, 'activate_Smeeks_Staff_Directory' );
-register_deactivation_hook( __FILE__, 'deactivate_Smeeks_Staff_Directory' );
+register_activation_hook( __FILE__, 'activate_smeeks_staff_directory' );
+register_deactivation_hook( __FILE__, 'deactivate_smeeks_staff_directory' );
 
 /**
  * The core plugin class that is used to define internationalization,
@@ -73,10 +73,10 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-smeeks-staff-directory.php
  *
  * @since    1.0.0
  */
-function run_Smeeks_Staff_Directory() {
+function run_smeeks_staff_directory() {
 
 	$plugin = new Smeeks_Staff_Directory();
 	$plugin->run();
 
 }
-run_Smeeks_Staff_Directory();
+run_smeeks_staff_directory();

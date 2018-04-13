@@ -9,8 +9,8 @@
  * @link       smeeks12763.sb.cis
  * @since      1.0.0
  *
- * @package    smeeks_Staff_Directory
- * @subpackage smeeks_Staff_Directory/includes
+ * @package    Smeeks_Staff_Directory
+ * @subpackage Smeeks_Staff_Directory/includes
  */
 
 /**
