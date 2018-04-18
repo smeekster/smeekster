@@ -23,11 +23,11 @@
 		
 ?>
 <fieldset class = "outer">
-<legend>Staff Directory Fields</legend>
+<legend>Smeeks Staff Directory Fields</legend>
 	<label class="smeeks-staff-directory-label">First Name:</label>
 	<input class="smeeks-staff-directory-input"  name="smeeks_staff_directory_first_name" type="text" value="<?php echo $smeeks_staff_directory_first_name; ?>"  required /><br>
 	<label class="smeeks-staff-directory-label">Last Name:</label>
 	<input class="smeeks-staff-directory-input"  name="smeeks_staff_directory_last_name" type="text" value="<?php echo $smeeks_staff_directory_last_name; ?>"  required /><br>
 	<label class="smeeks-staff-directory-label">Sort Order:</label>
-	<input class="smeeks_staff-directory-input"  name="smeeks_staff_directory_sort_order" type="text" value="<?php echo $smeeks_staff_directory_sort_order; ?>"  required /><br>
+	<input class="smeeks-staff-directory-input"  name="smeeks_staff_directory_sort_order" type="text" value="<?php echo $smeeks_staff_directory_sort_order; ?>"  required /><br>
 </fieldset>
