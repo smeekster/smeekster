@@ -160,7 +160,7 @@ class Smeeks_Staff_Directory {
 		$this->loader->add_action( 'save_post', $plugin_admin, 'save_smeeks_staff_directory_meta_fields' );
 		$this->loader->add_action( 'admin_init', $plugin_admin, 'display_smeeks_staff_directory_meta_fields' );
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'smeeks_staff_directory_sort_menu' );
-		
+		$this->loader->add_action( 'wp_ajax_smeeks_staff_directory_ajax_sort', $plugin_admin, 'smeeks_staff_directory_sort_ajax_save' );
 	}
 
 	/**

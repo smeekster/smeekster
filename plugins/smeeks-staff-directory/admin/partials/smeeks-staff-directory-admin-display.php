@@ -23,7 +23,7 @@
 		
 ?>
 <fieldset class = "outer">
-<legend>Smeeks Staff Directory Fields</legend>
+<legend>Staff Directory Fields</legend>
 	<label class="smeeks-staff-directory-label">First Name:</label>
 	<input class="smeeks-staff-directory-input"  name="smeeks_staff_directory_first_name" type="text" value="<?php echo $smeeks_staff_directory_first_name; ?>"  required /><br>
 	<label class="smeeks-staff-directory-label">Last Name:</label>

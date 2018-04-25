@@ -1,43 +1,34 @@
 <?php
-/
-class Meta_Manager_Public {
+/**
+ * The template for displaying all single posts
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+ *
+ * @package WordPress
+ * @subpackage Twenty_Seventeen
+ * @since 1.0
+ * @version 1.0
+ */
 
-	/**
-	 * A reference to the version of the plugin that is passed to this class from the caller.
-	 *
-	 * @access private
-	 * @var    string    $version    The current version of the plugin.
-	 */
-	private $version;
+get_header(); ?>
 
-	/**
-	 * Initializes this class and stores the current version of this plugin.
-	 *
-	 * @param    string    $version    The current version of this plugin.
-	 */
-	public function __construct( $version ) {
-		$this->version = $version;
-	}
+<div class="wrap">
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
 
-	/**
-	 * Uses the partial located in the admin directory for rendering the
-	 * post meta data the end of the post content.
-	 *
-	 * @param    string    $content    The post content.
-	 * @return   string    $content    The post content including the given posts meta data.
-	 */
-	public function display_post_meta_data( $content ) {
+			<?php
+			/* Start the Loop */
+			while ( have_posts() ) : the_post();
 
-		ob_start();
+				get_template_part( 'admin/partials/smeeks-staff-directory-admin-display.php', get_post_format() );
+								
+				
+				) );
 
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/partials/smeeks-staff-directory-admin-display.php';
-		$template = ob_get_contents();
-		$content .= $template;
+			endwhile; // End of the loop.
+			?>
 
-		ob_end_clean();
-
-		return $content;
-
-	}
-
-}
+		</main><!-- #main -->
+	</div><!-- #primary -->
+	<?php get_sidebar(); ?>
+</div><!-- .wrap -->

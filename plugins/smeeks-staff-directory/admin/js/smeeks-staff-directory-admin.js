@@ -29,7 +29,22 @@
 	 * practising this, we should strive to set a better example in our own work.
 	 */
 
-	 jQuery("#sortable").sortable();
-	 
-	 
+	 jQuery("#sortable").sortable({
+		
+		stop: function (event, ui) {
+			//alert('save sortable');
+			
+			var new_order = jQuery(this).sortable('serialize');
+			//alert('new_order ' + new_order);
+			// data sent to the php function is $_POST['order']
+			// wp action is wp_ajax_staff_directory_ajax_sort
+			jQuery.post(ajaxurl, { action: 'smeeks_staff_directory_ajax_sort', order: new_order }, function( data ) {
+				console.log('ajax sent and response received');  
+				alert(data);				
+			});
+			
+		}
+		
+	});	
+	
 })( jQuery );

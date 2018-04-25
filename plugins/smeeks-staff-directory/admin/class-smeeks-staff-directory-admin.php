@@ -97,6 +97,7 @@ class Smeeks_Staff_Directory_Admin {
 		 */
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/smeeks-staff-directory-admin.js', array( 'jquery' ), $this->version, false );
+		wp_localize_script( $this->plugin_name, 'smeeks_staff_directory_ajax_sort', array( 'ajaxurl' => admin_url( 'admin-ajax.php' )));
 
 	}
 	public function register_smeeks_staff_directory_post_type() {
@@ -115,22 +116,22 @@ class Smeeks_Staff_Directory_Admin {
 	public function display_smeeks_staff_directory_meta_fields() {
 		//https://developer.wordpress.org/reference/functions/add_meta_box/
 		//add_meta_box(id,title,callback,screen,context,priority,callback_args)
-		add_meta_box("smeeks_staff_directory_meta", "Smeeks Staff Directory Details", array($this,"render_smeeks_staff_directory_meta_options"), "smeeks_staff_directory", "normal", "default");
+		add_meta_box("smeeks_staff_directory_meta", "Staff Directory Details", array($this,"render_smeeks_staff_directory_meta_options"), "smeeks_staff_directory", "normal", "default");
 	}
-	public function render_smeeks_staff_directory_meta_options() {
+	public function render_smeeks_staff_directory_meta_options() 
+	{
 		require_once plugin_dir_path( __FILE__ ) . 'partials/smeeks-staff-directory-admin-display.php';
 	}
-	
-	
-	
-	public function save_smeeks_staff_directory_meta_fields() {
+		
+	public function save_smeeks_staff_directory_meta_fields() 
+	{
 		global $post;
 		$smeeks_staff_directory_first_name = sanitize_text_field( $_POST['smeeks_staff_directory_first_name'] );
 		update_post_meta($post->ID, "smeeks_staff_directory_first_name", $smeeks_staff_directory_first_name);
 		$smeeks_staff_directory_last_name = sanitize_text_field( $_POST['smeeks_staff_directory_last_name'] );
 		update_post_meta($post->ID, "smeeks_staff_directory_last_name", $smeeks_staff_directory_last_name);
-		$smeeks_staff_directory_sort_order = sanitize_text_field( $_POST['smeeks_staff_directory_sort_order'] );
-		update_post_meta($post->ID, "smeeks_staff_directory_sort_order", $smeeks_staff_directory_sort_order);
+		$smeeks_staff_directory_sort_order = sanitize_text_field( $_POST['smeeks_staff_directory_order'] );
+		update_post_meta($post->ID, "smeeks_staff_directory_sort)order", $smeeks_staff_directory_sort_order);
 	}	
 	function smeeks_staff_directory_sort_menu(){
 		//add_submenu_page( string $parent_slug, string $page_title, string $menu_title, string $capability, string $menu_slug, callable $function = '' )
@@ -142,6 +143,10 @@ class Smeeks_Staff_Directory_Admin {
 		require_once plugin_dir_path( __FILE__ ) . 'partials/smeeks-staff-directory-admin-sort.php';
 	}
 	
-	
+	public function smeeks_staff_directory_sort_ajax_save() {
+		// data as POST from ajax
+		die($_POST['order']);
+		die('smeeks_staff_directory_sort_ajax_save');
+	}
 
 }
